@@ -37,13 +37,17 @@ EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = (
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # My apps
     'newsletter',
+    # 3rd party apps
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
