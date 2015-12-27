@@ -18,12 +18,16 @@
 {% endblock jumbotron_content %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  {% if form %}
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <h1>{{ title }}</h1>
+    {% if form %}
     <form method="POST" action="">
       {% csrf_token %}
       {{ form|crispy }}
       <input class="btn btn-primary" type="submit" value="Sign Up">
     </form>
-  {% endif %}
+    {% endif %}
+  </div>
+</div>
 {% endblock content %}
