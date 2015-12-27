@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}
   Welcome | {{ block.super }}
@@ -21,7 +22,7 @@
   {% if form %}
     <form method="POST" action="">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form|crispy }}
       <input class="btn btn-primary" type="submit" value="Sign Up">
     </form>
   {% endif %}
