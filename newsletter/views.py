@@ -17,7 +17,7 @@ def home(request):
         instance = form.save(commit=False)
         full_name = form.cleaned_data.get('full_name')
         if full_name is None:
-            full_name = "Nimetön"
+            full_name = "Nimeton"
         instance.save()
         context = {
             'title': "Thanks!"
