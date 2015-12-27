@@ -2,3 +2,4 @@ venv
 *.pyc
 staticfiles
 .env
+static_in_env

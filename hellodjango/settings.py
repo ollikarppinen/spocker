@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import dj_database_url
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = 'm1og)(4kwdkx64k9ng0=f26n!(*i8konj+to15!$+*@k-^0l*0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'yourgmail@gmail.com'
 EMAIL_HOST_PASSWORD = 'yourpassword'
@@ -106,10 +107,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_in_pro', 'our_static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
 
 # Settings for Heroku
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
 DATABASES['default'] = dj_database_url.config()
 # DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 # DATABASES['default']['NAME'] = os.path.join(BASE_DIR, )
@@ -123,8 +128,5 @@ ALLOWED_HOSTS = ['*']
 # Static asset configuration
 # import os
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = 'staticfiles'
 # STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-)
