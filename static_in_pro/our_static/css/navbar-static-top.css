@@ -6,3 +6,15 @@ body {
   margin-bottom: 19px;
 }
 
+.navbar-toggle {
+  border: none;
+}
+
+.navbar-toggle:hover {
+  border: none;
+}
+
+.navbar-icon {
+  font-size: 40px;
+  padding: 10px;
+}
