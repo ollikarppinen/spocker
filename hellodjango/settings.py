@@ -16,8 +16,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SITE_ID = 3
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -131,7 +129,7 @@ ALLOWED_HOSTS = ['*']
 # Registration Redux
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
-SITE_ID = 1
+SITE_ID = 3
 LOGIN_REDIRECT_URL = '/'
 
 # Crispy Forms
