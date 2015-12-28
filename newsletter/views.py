@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 
 def home(request):
     title = 'Sign Up'
-    navbar_title = 'Home'
+    navbar_title = ''
     form = SignUpForm(request.POST or None)
     context = {
         'title': title,

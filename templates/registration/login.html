@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 
-{# {% block content %}
+{% block content %}
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3'>
 <h1>Login</h1>
@@ -11,7 +11,7 @@
   {% csrf_token %}
   {{ form|crispy }}
 
-  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Submit' %}" />
+  <input class='btn btn-block btn-success' type="submit" value="{% trans 'Submit' %}" />
   <input type="hidden" name="next" value="{{ next }}" />
 </form>
 </div>
@@ -25,4 +25,4 @@
 </div>
 </div>
 
-{% endblock %} #}
+{% endblock %}
