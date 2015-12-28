@@ -16,6 +16,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SITE_ID = 3
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -29,8 +30,8 @@ DEBUG = os.environ.get('DEBUG', False)
 ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'yourgmail@gmail.com'
-EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_HOST_USER = 'picklewebapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'MunNettisivunSalasana'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
