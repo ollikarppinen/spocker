@@ -24,9 +24,7 @@ urlpatterns = [
     url(r'^about/$', 'hellodjango.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    # url(r'^', 'hellodjango.views.error404'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
