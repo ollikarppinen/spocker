@@ -115,12 +115,20 @@ USE_TZ = True
 
 # AWS_PRELOAD_METADATA = False
 
+# FOR WHITENOISE
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+# STATIC_URL = '/static/'
+# STATIC_ROOT = 'os.path.join(BASE_DIR, 'static_in_env', 'static_root')'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_in_pro', 'our_static'),)
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
 
 # Settings for Heroku
 # Parse database configuration from $DATABASE_URL
@@ -148,3 +156,8 @@ LOGIN_REDIRECT_URL = '/'
 
 # Crispy forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
