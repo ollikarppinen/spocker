@@ -113,28 +113,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-# AWS_PRELOAD_METADATA = False
-
-# FOR WHITENOISE
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-# STATIC_URL = '/static/'
-# STATIC_ROOT = 'os.path.join(BASE_DIR, 'static_in_env', 'static_root')'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
 
 # Settings for Heroku
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
-# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-# DATABASES['default']['NAME'] = os.path.join(BASE_DIR, )
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -142,19 +127,13 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-# Static asset configuration
-# import os
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# STATIC_ROOT = 'staticfiles'
-# STATIC_URL = '/static/'
-
-# Django registration redux settings
+# Registration Redux
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
-# Crispy forms settings
+# Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Simplified static file serving.
