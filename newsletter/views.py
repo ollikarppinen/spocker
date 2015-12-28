@@ -6,10 +6,12 @@ from django.core.mail import send_mail
 
 
 def home(request):
-    title = 'Welcome!'
+    title = 'Sign Up'
+    navbar_title = 'Home'
     form = SignUpForm(request.POST or None)
     context = {
         'title': title,
+        'navbar_title': navbar_title,
         'form': form,
     }
     if form.is_valid():
