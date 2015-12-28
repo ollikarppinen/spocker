@@ -5,29 +5,34 @@
   Welcome | {{ block.super }}
 {% endblock head_title %}
 
-{# {% block jumbotron %}
-{{ block.super }}
-{% endblock jumbotron %} #}
+<style>
+{% block style %}
+
+
+{% endblock style %}
+</style>
+
 {% block jumbotron_content %}
-  <h1>Hello there! example</h1>
-  <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-  <p>To see the difference between static and fixed top navbars, just scroll.</p>
+  <h1>Hello!</h1>
+  <p>This site has no function.</p>
+  <p>Herp derpsum tee der ler derp. Der merpus ler sherp berp. Merpus herpem perper mer derperker der dee, herpsum sherpus! Der ter dee berp. Merp berp herp derperker, herpderpsmer tee! Sherp serp sherper merp derps derpler terpus derpy? Le serp derp ter, me perp derpus terp merp. Serp terp le dee? Herpsum derpus mer derpler serp herderder merp sherper. Herpderpsmer derps sherlamer berp der. Derpsum terpus ner sherper. Le derpler dee ter herpsum. Ter perper ler herderder derps derp, sherpus berps. Derperker herpler derps, derp me tee terp ler perp terpus. Perp herpem merpus dee. Sherp nerpy serp perp herp derp herpem. Perp sherper tee dee. Perper sherper herpy tee derperker pee herpem nerpy terp sherlamer? Terp ler ner derpsum tee dee. Herpem ler derp sherper.
+  </p>
   <p>
-  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Derp! &raquo;</a>
   </p>
 {% endblock jumbotron_content %}
 
 {% block content %}
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <h1>{{ title }}</h1>
-    {% if form %}
-    <form method="POST" action="">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <input class="btn btn-primary" type="submit" value="Sign Up">
-    </form>
-    {% endif %}
+  <div class="row-fluid">
+    <div class="col-md-3">
+      <p class="lead text-align-center">{{ title }}</p>
+      {% if form %}
+        <form method="POST" action="">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <input class="btn btn-primary" type="submit" value="Sign Up">
+        </form>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endblock content %}
