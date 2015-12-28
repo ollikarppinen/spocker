@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'm1og)(4kwdkx64k9ng0=f26n!(*i8konj+to15!$+*@k-^0l*0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -125,13 +125,14 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_roo
 # Settings for Heroku
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
-
 # DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 # DATABASES['default']['NAME'] = os.path.join(BASE_DIR, )
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
 # import os
@@ -147,14 +148,3 @@ LOGIN_REDIRECT_URL = '/'
 
 # Crispy forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-# Disable debug in production
-
-if 'DEBUG' in os.environ.keys():
-    DEBUG = True
-    ALLOWED_HOSTS = ['.herokuapp.com']
