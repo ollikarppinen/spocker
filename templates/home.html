@@ -18,7 +18,9 @@
     <tr><td>{{ forloop.counter }}</td><td>{{ i }}</td><td>{{ i.full_name }}</td><td>{{ i.timestamp|timesince }}</td></tr>
   {% endfor %}
   </table>
-
+  {% else %}
+  </br></br></br>
+  <i class="spinning-camera fa fa-camera-retro fa-spin"></i>
   {% endif %}
 
   {% else %}
