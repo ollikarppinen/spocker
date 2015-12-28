@@ -5,15 +5,26 @@
   Welcome | {{ block.super }}
 {% endblock head_title %}
 
-<style>
-{% block style %}
 
+  {% block content %}
+  {% if request.user.is_authenticated %}
+  <h1>You are logged in</h1>
 
-{% endblock style %}
-</style>
+  {% if queryset %}
+  <h2>Welcome big boss, here are the sign ups:</h2>
+  <table class="table">
+    <tr><td></td><td><h3>@</h3></td><td><h3>Name</h3></td><td><h3>When?</h3></td></tr>
+  {% for i in queryset %}
+    <tr><td>{{ forloop.counter }}</td><td>{{ i }}</td><td>{{ i.full_name }}</td><td>{{ i.timestamp|timesince }}</td></tr>
+  {% endfor %}
+  </table>
 
-{% block jumbotron %}
-<!-- Main component for a primary marketing message or call to action -->
+  {% endif %}
+
+  {% else %}
+
+  {% block jumbotron %}
+  <!-- Main component for a primary marketing message or call to action -->
   <div class="jumbotron">
     <h1>Hello!</h1>
     <p>This site has no function.</p>
@@ -23,10 +34,9 @@
     <a class="btn btn-lg btn-success" href="" role="button">Derp! &raquo;</a>
     </p>
   </div>
-{% endblock jumbotron %}
+  {% endblock jumbotron %}
 
-{% block content %}
-  <div class="row-fluid">
+  <div class="row">
     <div class="col-md-3 pull-right">
       <p class="lead text-align-center">{{ title }}</p>
       {% if form %}
@@ -38,4 +48,6 @@
       {% endif %}
     </div>
   </div>
-{% endblock content %}
+
+  {% endif %}
+  {% endblock content %}
