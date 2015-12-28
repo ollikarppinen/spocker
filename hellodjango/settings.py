@@ -43,12 +43,14 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # My apps
     'newsletter',
     # 3rd party apps
     'crispy_forms',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -138,4 +140,9 @@ ALLOWED_HOSTS = ['*']
 # STATIC_ROOT = 'staticfiles'
 # STATIC_URL = '/static/'
 
+# Django registration redux settings
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+
+# Crispy forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
