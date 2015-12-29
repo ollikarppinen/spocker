@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'spockerapp@gmail.com'
-EMAIL_HOST_PASSWORD = 'herpderplivelong'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
