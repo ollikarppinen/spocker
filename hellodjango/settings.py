@@ -28,8 +28,8 @@ DEBUG = os.environ.get('DEBUG', False)
 ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'picklewebapp@gmail.com'
-EMAIL_HOST_PASSWORD = 'MunNettisivunSalasana'
+EMAIL_HOST_USER = 'spockerapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'herpderplivelong'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
@@ -108,6 +108,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+ADMINS = ('spockerapp@gmail.com',)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -122,9 +123,6 @@ DATABASES['default'] = dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
 
 # Registration Redux
 ACCOUNT_ACTIVATION_DAYS = 7

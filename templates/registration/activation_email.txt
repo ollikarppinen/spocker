@@ -4,9 +4,9 @@ Hello!
 
 Click the link below to activate your account.
 
-http://picklee.herokuapp.com{% url 'registration_activate' activation_key %}
+http://spocker.herokuapp.com{% url 'registration_activate' activation_key %}
 
 
 The above link is valid for {{ expiration_days }} days.
 
--Picklee App
+-Spocker App
