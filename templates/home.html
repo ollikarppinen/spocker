@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load staticfiles %}
 
 {% block head_title %}
   Welcome | {{ block.super }}
@@ -28,6 +29,13 @@
   {% block jumbotron %}
   <!-- Main component for a primary marketing message or call to action -->
   <div class="jumbotron">
+
+    <div class="svg-container">
+      {# <svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content"> #}
+        <object type="image/svg+xml" data="{% static 'img/retro_spocker.svg' %}" width="100%" height="100%" class="svg-content"></object>
+      {# </svg> #}
+    </div>
+
     <h1>Hello!</h1>
     <p>This site has no function.</p>
     <p>Herp derpsum tee der ler derp. Der merpus ler sherp berp. Merpus herpem perper mer derperker der dee, herpsum sherpus! Der ter dee berp. Merp berp herp derperker, herpderpsmer tee! Sherp serp sherper merp derps derpler terpus derpy? Le serp derp ter, me perp derpus terp merp. Serp terp le dee? Herpsum derpus mer derpler serp herderder merp sherper. Herpderpsmer derps sherlamer berp der. Derpsum terpus ner sherper. Le derpler dee ter herpsum. Ter perper ler herderder derps derp, sherpus berps. Derperker herpler derps, derp me tee terp ler perp terpus. Perp herpem merpus dee. Sherp nerpy serp perp herp derp herpem. Perp sherper tee dee. Perper sherper herpy tee derperker pee herpem nerpy terp sherlamer? Terp ler ner derpsum tee dee. Herpem ler derp sherper.
