@@ -17,14 +17,18 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
+from .views import home_files
 
 urlpatterns = [
-    url(r'^$', 'newsletter.views.home', name='home'),
-    url(r'^contact/$', 'newsletter.views.contact', name='contact'),
-    url(r'^about/$', 'hellodjango.views.about', name='about'),
+    url(r'^(?P<filename>(robots.txt)|(humans.txt))$',
+        home_files, name="home-files"),
+    url(r'^$', 'imgshare.views.home', name='home'),
+    # url(r'^contact/$', 'newsletter.views.contact', name='contact'),
+    url(r'^about/$', 'spocker.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)

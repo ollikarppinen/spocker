@@ -15,7 +15,7 @@ from dj_static import Cling
 # from whitenoise.django import DjangoWhiteNoise
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hellodjango.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spocker.settings")
 
 # application = get_wsgi_application()
 application = Cling(get_wsgi_application())
