@@ -60,6 +60,8 @@ INSTALLED_APPS = (
     # 3rd party apps
     'crispy_forms',
     'registration',
+    'pyuploadcare.dj',
+    # 'gallery',
 )
 
 SITE_ID = 1
@@ -156,3 +158,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # Covers regular testing and django-coverage
 if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+
+# Pyupdloadcare
+UPLOADCARE = {
+    'pub_key': 'demopublickey',
+    'secret': 'demoprivatekey',
+}

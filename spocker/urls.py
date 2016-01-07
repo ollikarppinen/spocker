@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^(?P<filename>(robots.txt)|(humans.txt))$',
         home_files, name="home-files"),
     url(r'^$', 'imgshare.views.home', name='home'),
-    # url(r'^contact/$', 'newsletter.views.contact', name='contact'),
+    url(r'^upload/$', 'imgshare.views.upload', name='upload'),
     url(r'^about/$', 'spocker.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),

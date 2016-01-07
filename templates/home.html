@@ -3,13 +3,13 @@
 {% load staticfiles %}
 
 {% block head_title %}
-  Welcome | {{ block.super }}
+ | Welcome
 {% endblock head_title %}
 
 
   {% block content %}
   {% if request.user.is_authenticated %}
-  <h1>You are logged in</h1>
+  <h1>Welcome {{ user.username }}!</h1>
 
   {% if queryset %}
   <h2>Welcome big boss, here are the sign ups:</h2>
