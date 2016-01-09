@@ -11,21 +11,18 @@
           <a class="navbar-brand navbar-icon" href="{% url 'home' %}"><i class="fa fa-hand-spock-o"></i></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-
           <ul class="nav navbar-nav">
             <li><a href="{% url 'upload' %}">Upload</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
           {% if request.user.is_authenticated %}
             <li><a href="{% url 'auth_logout' %}">Logout</a></li>
             {% else %}
-            <li class="visible"><a href="{% url 'auth_login' %}">Login</a></li>
+            <li class="visible hidden-lg"><a href="{% url 'auth_login' %}">Login</a></li>
             <li><a href="{% url 'registration_register' %}">Register</a></li>
           {% endif %}
           </ul>
-
           {% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
             <form action="{% url 'auth_login' %}" class="navbar-form navbar-right visible-lg" method='POST'>
               {% csrf_token %}

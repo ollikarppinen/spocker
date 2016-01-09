@@ -1,19 +1,27 @@
 {% extends "base.html" %}
 
+
 {% block head_js_extension %}
+
   <script>
+  UPLOADCARE_TABS = 'all';
   UPLOADCARE_PUBLIC_KEY = 'demopublickey';
   </script>
-  {{ form.meida }}
+  {{ form.media }}
+
 {% endblock head_js_extension %}
 
+
 {% block content %}
+
   <div class="center">
     <form action="." method="POST">
+      {% csrf_token %}
       <p>Select image:</p>
       <p>{{ form.image }}</p>
       <p><input type="submit" name="send" id=""></p>
       {{ form.errors }}
     </form>
   </div>
+
 {% endblock content %}
