@@ -162,8 +162,8 @@ if 'test' in sys.argv or 'test_coverage' in sys.argv:
 
 # Pyupdloadcare
 UPLOADCARE = {
-    'pub_key': 'demopublickey',
-    'secret': 'demoprivatekey',
+    'pub_key': '364733fc6f58819487f3',
+    'secret': get_env_variable('UPLOADCARE_SECRET_KEY'),
 }
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = ''
