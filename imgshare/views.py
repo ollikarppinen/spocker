@@ -1,17 +1,23 @@
+from django.views.generic import DetailView
+from django.views.generic.edit import CreateView
+from .models import Image
 from django.shortcuts import render
 
 
 def home(request):
-    title = 'Welcome'
+    photos = Image.objects.all()[:5]
     context = {
-        'title': title,
+        'title': 'Welcome',
+        'photos': photos,
     }
-    return render(request, "home.html", context)
+    return render(request, 'home.html', context)
 
 
-def upload(request):
-    title = 'Upload'
-    context = {
-        'title': title,
-    }
-    return render(request, 'upload.html', context)
+class UploadView(CreateView):
+    model = Image
+    fields = ['image']
+    success_url = 'home'
+
+
+class ImageView(DetailView):
+    model = Image

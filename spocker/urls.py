@@ -18,12 +18,13 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from .views import home_files
+from imgshare.views import UploadView
 
 urlpatterns = [
     url(r'^(?P<filename>(robots.txt)|(humans.txt))$',
         home_files, name="home-files"),
     url(r'^$', 'imgshare.views.home', name='home'),
-    url(r'^upload/$', 'imgshare.views.upload', name='upload'),
+    url(r'^upload/$', UploadView.as_view(), name='upload'),
     url(r'^about/$', 'spocker.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
