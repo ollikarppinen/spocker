@@ -35,7 +35,7 @@
     {% for image_row in latest_images %}
       <div class="row">
           {% for image in image_row %}
-        <div class="col-xs-6 col-md-3">
+        <div class="col-sm-12 col-md-3">
             <a href="{{ image.getabsolute_url }}" class="thumbnail">
               <img src="{{ image.image }}" alt="Img not found">
             </a>
