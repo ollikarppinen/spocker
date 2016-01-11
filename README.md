@@ -1,6 +1,6 @@
 # spocker
-Django web app with Bootstrap.
+Image sharing web app.
 
-Very much a work in progress at the moment(it does nothing).
+Made with Django, Bootrap, Uploadcare and Heroku.
 
 http://spocker.herokuapp.com
