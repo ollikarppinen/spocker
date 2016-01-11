@@ -9,34 +9,41 @@
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
+{% block jumbotron %}{% endblock jumbotron %}
 
-<h1>Welcome {{ user.username }}!</h1>
-<i class="home-login-icon fa fa-magic"></i>
-{% for photo in photos %}
-  <img src="{{ photo.image }}" class="img-responsive">
-{% endfor %}
+<div class="panel panel-default">
 
+  {% if request.user.is_authenticated %}
+    <div class="alert alert-dismissible" role="alert">
+      <span>Welcome {{ user.username }}!</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+  {% else %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <a href="{% url 'auth_login' %}" class="alert-link">Login</a>
+      <span>or</span>
+      <a href="{% url 'registration_register' %}" class="alert-link">Register</a>
+      <span>to upload images!</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+  {% endif %}
 
-{% else %}
-
-{% block jumbotron %}
-<!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron">
-
-  <div class="svg-container">
-      <object type="image/svg+xml" data="{% static 'img/retro_spocker.svg' %}" width="100%" height="100%" class="svg-content"></object>
+  <div class="panel-body">
+    Latest images
   </div>
-
-  <h1>Hello!</h1>
-  <p>This site has no function.</p>
-  <p>Herp derpsum tee der ler derp. Der merpus ler sherp berp. Merpus herpem perper mer derperker der dee, herpsum sherpus! Der ter dee berp. Merp berp herp derperker, herpderpsmer tee! Sherp serp sherper merp derps derpler terpus derpy? Le serp derp ter, me perp derpus terp merp. Serp terp le dee? Herpsum derpus mer derpler serp herderder merp sherper. Herpderpsmer derps sherlamer berp der. Derpsum terpus ner sherper. Le derpler dee ter herpsum. Ter perper ler herderder derps derp, sherpus berps. Derperker herpler derps, derp me tee terp ler perp terpus. Perp herpem merpus dee. Sherp nerpy serp perp herp derp herpem. Perp sherper tee dee. Perper sherper herpy tee derperker pee herpem nerpy terp sherlamer? Terp ler ner derpsum tee dee. Herpem ler derp sherper.
-  </p>
-  <p>
-  <a class="btn btn-lg btn-success" href="" role="button">Derp! &raquo;</a>
-  </p>
+  <div class="panel-footer">
+    {% for image_row in latest_images %}
+      <div class="row">
+          {% for image in image_row %}
+        <div class="col-xs-6 col-md-3">
+            <a href="{{ image.getabsolute_url }}" class="thumbnail">
+              <img src="{{ image.image }}" alt="Img not found">
+            </a>
+        </div>
+          {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% endblock jumbotron %}
 
-{% endif %}
 {% endblock content %}
