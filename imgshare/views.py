@@ -30,10 +30,6 @@ class UploadView(CreateView):
     fields = ['image']
 
 
-class ImageView(DetailView):
-    model = Image
-
-
 def image(request, pk):
     try:
         image = Image.objects.get(pk = pk)

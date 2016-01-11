@@ -1,6 +1,6 @@
 Activate account at spocker.herokuapp.com:
 
-Hello!
+Hi!
 
 Click the link below to activate your account.
 
@@ -8,5 +8,3 @@ http://spocker.herokuapp.com{% url 'registration_activate' activation_key %}
 
 
 The above link is valid for {{ expiration_days }} days.
-
--Spocker App

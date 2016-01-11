@@ -9,41 +9,36 @@
 
 {% block content %}
 
-{% block jumbotron %}{% endblock jumbotron %}
 
-<div class="panel panel-default">
+  {% block jumbotron %}{% endblock jumbotron %}
 
-  {% if request.user.is_authenticated %}
-    <div class="alert alert-dismissible" role="alert">
-      <span>Welcome {{ user.username }}!</span>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    </div>
-  {% else %}
-    <div class="alert alert-warning alert-dismissible" role="alert">
-      <a href="{% url 'auth_login' %}" class="alert-link">Login</a>
-      <span>or</span>
-      <a href="{% url 'registration_register' %}" class="alert-link">Register</a>
-      <span>to upload images!</span>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    </div>
-  {% endif %}
+  <div class="panel panel-default">
 
-  <div class="panel-body">
-    Latest images
-  </div>
-  <div class="panel-footer">
-    {% for image_row in latest_images %}
-      <div class="row">
-          {% for image in image_row %}
-        <div class="col-sm-12 col-md-3">
-            <a href="{{ image.get_absolute_url }}" class="thumbnail">
-              <img src="{{ image.image }}" alt="Img not found">
-            </a>
-        </div>
-          {% endfor %}
+    {% if request.user.is_authenticated %}
+      <div class="alert alert-dismissible" role="alert">
+        <span>Welcome {{ user.username }}!</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
-    {% endfor %}
+    {% else %}
+      {% include "login_warning.html" %}
+    {% endif %}
+
+    <div class="panel-body">
+      Latest images
+    </div>
+    <div class="panel-footer">
+      {% for image_row in latest_images %}
+        <div class="row">
+            {% for image in image_row %}
+          <div class="col-sm-12 col-md-3">
+              <a href="{{ image.get_absolute_url }}" class="thumbnail">
+                <img src="{{ image.image }}" alt="Img not found">
+              </a>
+          </div>
+            {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
 
 {% endblock content %}
