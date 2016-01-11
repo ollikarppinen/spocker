@@ -1,4 +1,4 @@
-Activate account at picklee.herokuapp.com:
+Activate account at spocker.herokuapp.com:
 
 Hello!
 
