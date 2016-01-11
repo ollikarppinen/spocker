@@ -9,7 +9,6 @@ class Image(models.Model):
     slug = models.SlugField(max_length=10, primary_key=True, blank=True)
     image = ImageField(manual_crop="")
 
-    # @models.permalink
     def get_absolute_url(self):
         return reverse('imgshare.views.image', args=[self.pk])
 
