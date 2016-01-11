@@ -1,15 +1,6 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+DEVELOPER:
+Olli Karppinen, ollikarppinen@gmail.com
 
-# TEAM
-
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
-
-# TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    jQuery, Modernizr
+SITE:
+Tech: Django, Bootstrap, pyuploadcare, registration redux, crispy forms
+IDE: Sublime Text

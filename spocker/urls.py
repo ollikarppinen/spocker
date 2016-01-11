@@ -27,8 +27,11 @@ urlpatterns = [
     url(r'^upload/$', UploadView.as_view(), name='upload'),
     url(r'^about/$', 'spocker.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^gallery/$', 'imgshare.views.gallery', name='gallery'),
     url(r'^gallery/(?P<pk>[a-z]{6})$', 'imgshare.views.image', name='image'),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^user/(?P<username>.+)$',
+        'imgshare.views.user_view', name='user_view'),
 ]
 
 if settings.DEBUG:

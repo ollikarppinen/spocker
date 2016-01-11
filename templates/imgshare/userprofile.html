@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  {% block jumbotron %}
+    {% if user.is_authenticated and user.username == username %}
+      <h1>Hello {{ username }}!</h1>
+    {% else %}
+      <h1>This profile view belongs to: {{ username }}</h1>
+    {% endif %}
+  {% endblock jumbotron %}
+{% endblock content %}
+

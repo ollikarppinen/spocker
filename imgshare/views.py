@@ -1,7 +1,8 @@
 from django.views.generic.edit import CreateView
 from .models import Image
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from math import ceil
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -38,3 +39,14 @@ def image(request, pk):
         return render(request, 'imgshare/image.html', context)
     except:
         return render(request, 'imgshare/image_not_found.html', {})
+
+
+def gallery(request):
+    return render(request, 'imgshare/gallery.html', {})
+
+
+def user_view(request, username):
+    context = {}
+    user = get_object_or_404(User, username=username)
+    context['username'] = username
+    return render(request, 'imgshare/userprofile.html', context)
