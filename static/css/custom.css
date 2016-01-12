@@ -21,3 +21,10 @@
   top: 0;
   left: 0;
 }
+
+.grid-item-content {
+  height: 100px;
+  background: #D26;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}

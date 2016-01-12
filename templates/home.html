@@ -9,33 +9,18 @@
 
 {% block content %}
 
-
   {% block jumbotron %}{% endblock jumbotron %}
 
-  <div class="panel panel-default">
-
-    {% if request.user.is_authenticated %}
-      <div class="alert alert-dismissible" role="alert">
-        <span>Welcome {{ user.username }}!</span>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-    {% else %}
-      {% include "login_warning.html" %}
-    {% endif %}
-
-    <div class="panel-body">
-      Latest images
-    </div>
-    <div class="panel-footer">
-      {% for image_row in latest_images %}
-        <div class="row">
-            {% for image in image_row %}
-          <div class="col-sm-12 col-md-3">
+  <div class="container">
+    <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
+      {% for image in images %}
+        <div class="grid-sizer col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="grid-content">
               <a href="{{ image.get_absolute_url }}" class="thumbnail">
                 <img src="{{ image.image }}" alt="Img not found">
               </a>
           </div>
-            {% endfor %}
         </div>
       {% endfor %}
     </div>
