@@ -48,5 +48,5 @@ def gallery(request):
 def user_view(request, username):
     context = {}
     user = get_object_or_404(User, username=username)
-    context['username'] = username
+    context['username'] = user.username
     return render(request, 'imgshare/userprofile.html', context)
