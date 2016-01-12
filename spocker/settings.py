@@ -61,7 +61,6 @@ INSTALLED_APPS = (
     'crispy_forms',
     'registration',
     'pyuploadcare.dj',
-    # 'gallery',
 )
 
 SITE_ID = 1

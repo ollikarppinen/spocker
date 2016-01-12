@@ -9,9 +9,7 @@
 
 {% block content %}
 
-  {% block jumbotron %}{% endblock jumbotron %}
-
-  <div class="container">
+  <div class="container image-container">
     <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
       {% for image in images %}
         <div class="grid-sizer col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>

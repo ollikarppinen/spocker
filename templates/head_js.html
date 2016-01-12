@@ -1,5 +1,11 @@
 {% load staticfiles %}
 
+<!-- Ajax -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+
 <!-- head_js -->
 <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
 {{ form.media }}
@@ -10,5 +16,9 @@
 </script>
 
 <!--Masonry for tile layout-->
+<!--Masonry-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
-{# <script src="{% static 'js/masonry.js' %}"></script> #}
+<!--imagesLoaded-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.0.0/imagesloaded.pkgd.min.js"></script>
+<!--custom js for masonry-->
+<script src="{% static 'js/masonry.js' %}"></script>
