@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 
+{% block head_title %}
+ | Image
+{% endblock head_title %}
+
 {% block content %}
-  <img src="{{ image.image }}" class="img-responsive">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-content">
+      <a href="{{ image.image }}">
+        <img src="{{ image.image }}" alt="Img not found" class="img-responsive">
+      </a>
+    </div>
+    <div class="panel-footer">
+    </div>
+  </div>
 {% endblock content %}

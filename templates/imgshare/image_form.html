@@ -1,23 +1,35 @@
 {% extends "base.html" %}
 
+{% block head_title %}
+ | Upload
+{% endblock head_title %}
 
 {% block content %}
 
   <div class="panel panel-default">
 
-    <div class="panel-body">
-      Upload
-    </div>
-    <div class="panel-footer">
-      <form action="" method="post">
-        <div class="input-group">
-          {% csrf_token %}
-            {{ form.as_table }}
-          <span class="input-group-button">
-            <button type="submit" class="btn-sm btn-success">Save</button>
-          </span>
+    <div class="panel-heading">
+        <div class="text-align-center">
+          <h4>Upload</h4>
         </div>
-      </form>
+    </div>
+
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+          <form action="" method="post">
+            <div class="input-group">
+              {% csrf_token %}
+                {{ form.as_table }}
+              <span class="input-group-button">
+                <button type="submit" class="btn-sm btn-success">Save</button>
+              </span>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-4"></div>
+      </div>
     </div>
   </div>
 

@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 
 
 def home(request):
-    # image_limit = 20
-    # if Image.objects.count() < image_limit:
-    #     image_limit = Image.objects.count()
-    images = Image.objects.all()[::-1]#[:image_limit]
+    images = Image.objects.all()[::-1]
     context = {
         'images': images,
     }
+    print('TESTTESTTEST')
+    if request.is_ajax():
+        print("WORKS")
     return render(request, 'home.html', context)
 
 

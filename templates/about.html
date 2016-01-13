@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 
+{% block head_title %}
+ | About
+{% endblock head_title %}
 
 {% block content %}
-<div class="jumbotron">
-  <img src="http://i.imgur.com/zQcuNFJ.jpg" class="img-responsive"></img>
-</div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="text-align-center">Hello!</h1>
+      </div>
+      <div class="panel-body">
+        <p class="lead text-align-center">Feel free to contact me:</p>
+        <div class="lead text-align-center">
+          <a href="https://github.com/ollikarppinen"><i class="fa fa-github-square fa-fw fa-5x"></i></a>
+          <a href="https://fi.linkedin.com/in/karppinenolli"><i class="fa fa-linkedin-square fa-fw fa-5x"></i></a>
+          <a href="mailto:ollikarppinen@gmail.com"><i class="fa fa-at fa-fw fa-5x"></i></a>
+        </div>
+      </div>
+    </div>
 {% endblock content %}

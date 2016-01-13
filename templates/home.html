@@ -1,27 +1,40 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load staticfiles %}
+{% load endless %}
 
 {% block head_title %}
  | Welcome
 {% endblock head_title %}
 
-
 {% block content %}
-
-  <div class="container image-container">
-    <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
-
-      {% for image in images %}
-        <div class="grid-sizer col-lg-3 col-md-4 col-sm-6 col-xs-6"></div>
-        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-6">
-          <div class="grid-content">
-              <a href="{{ image.get_absolute_url }}" class="thumbnail">
-                <img src="{{ image.image }}" alt="Img not found">
-              </a>
-          </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="text-align-center">
+        <h4>Latest uploads</h4>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="image-container">
+        <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
+          {% paginate 8 images %}
+          {% for image in images %}
+            <div class="grid-sizer col-lg-3 col-md-4 col-sm-6 col-xs-6"></div>
+            <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-6">
+              <div class="grid-content">
+                  <a href="{{ image.get_absolute_url }}" class="thumbnail">
+                    <img src="{{ image.image }}" alt="Img not found">
+                  </a>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+      </div>
+    </div>
+    <div class="panel-footer">
+      <div class="text-align-center">
+        {% show_pages %}
+      </div>
     </div>
   </div>
 

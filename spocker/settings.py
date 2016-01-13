@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'registration',
     'pyuploadcare.dj',
+    'endless_pagination',
 )
 
 SITE_ID = 1
@@ -167,3 +168,17 @@ UPLOADCARE = {
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = ''
 
+# Endless Pagination
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
+)
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 12,
+    'MARGIN_PAGES_DISPLAYED': 2,
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}
+ENDLESS_PAGINATION_PER_PAGE = 15

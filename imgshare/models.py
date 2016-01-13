@@ -21,12 +21,9 @@ class Image(models.Model):
 
 
 class Comment(models.Model):
-    # author = models.U
     image = models.ForeignKey('Image', on_delete=models.CASCADE,)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     class Meta:
         verbose_name = "Comment"
         verbose_name_plural = "Comments"
-
-    # def save(self. *args, **kwargs):
