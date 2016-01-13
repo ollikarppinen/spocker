@@ -62,6 +62,7 @@ INSTALLED_APPS = (
     'registration',
     'pyuploadcare.dj',
     'endless_pagination',
+    'django_comments',
 )
 
 SITE_ID = 1
@@ -175,10 +176,4 @@ TEMPLATE_CONTEXT_PROCESSORS += (
     'django.core.context_processors.request',
 )
 
-PAGINATION_SETTINGS = {
-    'PAGE_RANGE_DISPLAYED': 12,
-    'MARGIN_PAGES_DISPLAYED': 2,
-
-    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
-}
-ENDLESS_PAGINATION_PER_PAGE = 15
+COMMENT_MAX_LENGTH = 140

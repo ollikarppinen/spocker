@@ -4,16 +4,22 @@
  | Image
 {% endblock head_title %}
 
+{% load comments %}
+
 {% block content %}
   <div class="panel panel-default">
     <div class="panel-heading">
+      <div class="panel-content">
+        <a href="{{ image.image }}">
+          <img src="{{ image.image }}" alt="Img not found" class="img-responsive">
+        </a>
+      </div>
     </div>
-    <div class="panel-content">
-      <a href="{{ image.image }}">
-        <img src="{{ image.image }}" alt="Img not found" class="img-responsive">
-      </a>
+    <div class="panel-body">
+      {% render_comment_list for image %}
     </div>
     <div class="panel-footer">
+      {% render_comment_form for image %}
     </div>
   </div>
 {% endblock content %}

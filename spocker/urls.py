@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^user/(?P<username>.+)$',
         'imgshare.views.user_view', name='user_view'),
+    url(r'^comments/', include('django_comments.urls')),
 ]
 
 if settings.DEBUG:

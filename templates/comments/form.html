@@ -1,0 +1,32 @@
+{% load comments %}
+
+{% if user.is_authenticated %}
+  <form action="{% comment_form_target %}" method="post" onsubmit="" id="form">
+    {% csrf_token %}
+    <div class="form-group">
+      {% for field in form %}
+        {% if field.is_hidden %}
+          <div>{{ field }}</div>
+        {% elif field.name == "name" %}
+          <input id="id_name" type="hidden" name="name" value="{{ user.username }}" />
+        {% elif field.name == "email" %}
+          <input type="hidden" name="email" value="{{ user.email }}" id="id_email" />
+        {% elif field.name == "honeypot" %}
+          <input type="hidden" name="honeypot" value=""/>
+        {% elif field.name == "url" %}
+          <input type="hidden" name="url" value=""/>
+        {% elif field.label %}
+          <textarea class="form-control" rows="2" id="id_comment" name="comment" placeholder="Comment"></textarea>
+        {% else %}
+          {% if field.errors %}
+          {% endif %}
+            {{ field.label_tag }} {{ field }}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <input type="hidden" name="next" value="{{ request.path }}" />
+    <button id="submit" type="submit" name="submit" class="btn btn-success" />Save</button>
+  </form>
+{% else %}
+  <a href="{% url 'auth_login' %}">Login</a> to comment
+{% endif %}

@@ -3,13 +3,11 @@ import random
 from pyuploadcare.dj import ImageField
 from django.db import models
 from django.core.urlresolvers import reverse
-# from django.contrib.auth.models import User
 
 
 class Image(models.Model):
     slug = models.SlugField(max_length=10, primary_key=True, blank=True)
     image = ImageField(manual_crop="")
-    # timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def get_absolute_url(self):
         return reverse('imgshare.views.image', args=[self.pk])
