@@ -1,30 +1,3 @@
 .text-align-center {
   text-align: center;
 }
-
-.home-login-icon {
-  font-size: 200px!important;
-}
-
-.svg-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
-.svg-content {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.grid-item-content {
-  height: 100px;
-  background: #D26;
-  border: 2px solid hsla(0, 0%, 0%, 0.5);
-  border-radius: 5px;
-}

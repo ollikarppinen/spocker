@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 
 def home(request):
-    image_limit = 20
-    if Image.objects.count() < image_limit:
-        image_limit = Image.objects.count()
-    images = Image.objects.all()[::-1][:image_limit]
+    # image_limit = 20
+    # if Image.objects.count() < image_limit:
+    #     image_limit = Image.objects.count()
+    images = Image.objects.all()[::-1]#[:image_limit]
     context = {
         'images': images,
     }
