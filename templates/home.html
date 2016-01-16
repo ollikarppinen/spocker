@@ -37,7 +37,11 @@
         <ul class="pager">
           {% get_pages %}
           {% if pages.previous %}
-            <li class="previous"><a href="{{ pages.previous.url }}">Previous</a></li>
+              {% if pages.previous.is_first %}
+                <li class="previous"><a href="{% url 'home' %}">Previous</a></li>
+              {% else %}
+                <li class="previous"><a href="{{ pages.previous.url }}">Previous</a></li>
+              {% endif %}
           {% else %}
             <li class="previous disabled"><a href="">Previous</a></li>
           {% endif %}
