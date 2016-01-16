@@ -18,13 +18,13 @@
       <div class="center-block text-align-center"><i class="fa fa-spinner fa-pulse fa-5x center-block"></i></div>
       <div class="image-container">
         <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
-          {% lazy_paginate 8 images %}
+          {% paginate 8 images %}
           {% for image in images %}
             <div class="grid-sizer col-lg-3 col-md-4 col-sm-6 col-xs-6"></div>
             <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-6">
               <div class="grid-content">
                   <a href="{{ image.get_absolute_url }}" class="thumbnail">
-                    <img src="{{ image.image }}" alt="Img not found">
+                    <img src="{{ image.image }}-/preview/300x300/-/progressive/yes/" alt="Img not found">
                   </a>
               </div>
             </div>
@@ -38,11 +38,11 @@
           {% get_pages %}
           {% if pages.previous %}
             <li><a href="{% url 'home' %}">&laquo;</a></li>
-              {% if pages.previous.is_first %}
-                <li><a href="{% url 'home' %}">&lsaquo;</a></li>
-              {% else %}
-                <li><a href="{{ pages.previous.url }}">&lsaquo;</a></li>
-              {% endif %}
+            {% if pages.current.number == 2 %}
+              <li><a href="{% url 'home' %}">&lsaquo;</a></li>
+            {% else %}
+              <li><a href="{{ pages.previous.url }}">&lsaquo;</a></li>
+            {% endif %}
           {% else %}
             <li class="disabled"><a href="">&laquo;</a></li>
             <li class="disabled"><a href="">&lsaquo;</a></li>
