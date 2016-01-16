@@ -18,7 +18,7 @@
       <div class="center-block text-align-center"><i class="fa fa-spinner fa-pulse fa-5x center-block"></i></div>
       <div class="image-container">
         <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
-          {% paginate 8 images %}
+          {% lazy_paginate 8 images %}
           {% for image in images %}
             <div class="grid-sizer col-lg-3 col-md-4 col-sm-6 col-xs-6"></div>
             <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-6">
@@ -34,7 +34,19 @@
     </div>
     <div class="panel-footer">
       <div class="text-align-center">
-        {% show_pages %}
+        <ul class="pager">
+          {% get_pages %}
+          {% if pages.previous %}
+            <li class="previous"><a href="{{ pages.previous.url }}">Previous</a></li>
+          {% else %}
+            <li class="previous disabled"><a href="">Previous</a></li>
+          {% endif %}
+          {% if pages.next %}
+            <li class="next"><a href="{{ pages.next.url }}">Next</a></li>
+          {% else %}
+            <li class="next disabled"><a href="">Next</a></li>
+          {% endif %}
+        </ul>
       </div>
     </div>
   </div>

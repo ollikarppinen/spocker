@@ -136,6 +136,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 # Settings for Heroku
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
 # Enable Persistent Connections
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
@@ -169,3 +170,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = ''
 
 COMMENT_MAX_LENGTH = 140
+
+
