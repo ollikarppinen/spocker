@@ -1,4 +1,6 @@
 <div id="comments">
+
+  {% if comment_list %}
   {% for comment in comment_list %}
     <div class="well well-sm">
       <div class="text-muted">
@@ -6,7 +8,12 @@
           <a href="{% url 'user_view' comment.name %}" class="text-primary">{{ comment.name }}</a>{{ comment.submit_date| timesince }} ago
         </small>
       </div>
-     <p>{{ comment.comment }}</p>
+     <div>{{ comment.comment }}</div>
     </div>
   {% endfor %}
+  {% else %}
+  <div class="text-muted">
+    No comments
+  </div>
+  {% endif %}
 </div>

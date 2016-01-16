@@ -4,4 +4,9 @@
 
 .well {
     background: rgb(34, 34, 34);
+    margin-bottom: 10px;
+}
+
+.well-sm {
+  padding: 5px;
 }
