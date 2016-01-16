@@ -9,9 +9,6 @@ def home(request):
     context = {
         'images': images,
     }
-    print('TESTTESTTEST')
-    if request.is_ajax():
-        print("WORKS")
     return render(request, 'home.html', context)
 
 

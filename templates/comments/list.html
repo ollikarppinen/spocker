@@ -1,4 +1,4 @@
-<dl id="comments">
+<div id="comments">
   {% for comment in comment_list %}
     <div id="c{{ comment.id }}" class="text-muted">
       <small>
@@ -6,7 +6,5 @@
       </small>
     </div>
    <p>{{ comment.comment }}</p>
-
-    </dd>
   {% endfor %}
-</dl>
+</div>
